@@ -26,8 +26,6 @@ namespace Application.Core.Validation.Funcionarios
                 .NotEmpty()
                      .WithMessage("Nome é obrigatório.");
 
-
-
             return Validator(context, cancellation);
         }
     }

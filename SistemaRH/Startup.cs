@@ -1,5 +1,6 @@
-using Application.Core.Application.Interfaces;
 using Application.Core.Application;
+using Application.Core.Application.Interfaces;
+using Application.Core.Repository;
 using Application.Core.Repository.Interfaces;
 using Application.Infra.Crosscuting;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +9,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Application.Core.Repository;
 
 namespace SistemaRHCompleto
 {
