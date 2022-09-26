@@ -1,10 +1,8 @@
 ﻿using Application.Core.Application.Interfaces;
 using Application.Core.Entities;
 using Application.Core.Validation.Funcionarios;
-using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Linq;
 
 namespace SistemaRHCompleto.Controllers
 {
@@ -14,7 +12,6 @@ namespace SistemaRHCompleto.Controllers
     {
         private readonly IFuncionariosApplicationService _funcionariosApplicationService;
         private readonly CommandFuncionariosValidation _commandValidation;
-
 
         public FuncionariosControllers(IFuncionariosApplicationService funcionariosApplicationService, CommandFuncionariosValidation commandValidation)
         {
@@ -41,8 +38,8 @@ namespace SistemaRHCompleto.Controllers
         {
             try
             {
-            var response = _funcionariosApplicationService.Get(codigo);
-            return Ok(response);
+                var response = _funcionariosApplicationService.Get(codigo);
+                return Ok(response);
             }
             catch (Exception e)
             {
@@ -84,8 +81,8 @@ namespace SistemaRHCompleto.Controllers
         {
             try
             {
-            var response = _funcionariosApplicationService.Insert(funcionario);
-            return Created("Funcionario", response);
+                var response = _funcionariosApplicationService.Insert(funcionario);
+                return Created("Funcionario", response);
             }
             catch (Exception e)
             {

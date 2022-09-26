@@ -3,8 +3,6 @@ using Application.Core.Entities;
 using Application.Core.Repository.Interfaces;
 using Application.Core.Validation.Funcionarios;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Application.Core.Application
 {
