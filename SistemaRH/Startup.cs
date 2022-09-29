@@ -26,10 +26,14 @@ namespace SistemaRHCompleto
         {
             services.AddSwaggerGen(c =>
             {
+                services.AddControllers();
+
+                services.AddCors();
+
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Title = "Sistema RH API",
-                    Version = "v1",
+                    Version = "v1.01",
                     Description = "Desafio voltado para o aprendizado sobre a relação de uma solução backend e banco de dados",
                 });
             });
@@ -57,6 +61,12 @@ namespace SistemaRHCompleto
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true)
+                .AllowCredentials());
 
             app.UseAuthorization();
 

@@ -3,6 +3,7 @@ using Application.Core.Entities;
 using Application.Core.Repository.Interfaces;
 using Application.Core.Validation.Funcionarios;
 using System;
+using System.Collections.Generic;
 
 namespace Application.Core.Application
 {
@@ -42,7 +43,7 @@ namespace Application.Core.Application
             var response = _repository.Get(codigo);
             return response.Result;
         }
-        public Funcionario GetAll()
+        public List<Funcionario> GetAll()
         {
             var response = _repository.GetAll();
             return response.Result;

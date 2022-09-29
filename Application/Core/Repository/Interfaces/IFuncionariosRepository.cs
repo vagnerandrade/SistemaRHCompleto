@@ -1,5 +1,6 @@
 ﻿using Application.Core.Entities;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Application.Core.Repository.Interfaces
@@ -10,6 +11,6 @@ namespace Application.Core.Repository.Interfaces
         void Update(Guid codigo, Funcionario funcionario);
         void Delete(Guid codigo);
         Task<Funcionario> Get(Guid codigo);
-        Task<Funcionario> GetAll();
+        Task<List<Funcionario>> GetAll();
     }
 }

@@ -2,6 +2,7 @@
 using Application.Core.Repository.Interfaces;
 using Dapper;
 using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
@@ -54,14 +55,14 @@ namespace Application.Core.Repository
                 return fromDB.FirstOrDefault();
             }
         }
-        public async Task<Funcionario> GetAll()
+        public async Task<List<Funcionario>> GetAll()
         {
             using (var db = new SqlConnection(ConectionString))
             {
                 await db.OpenAsync();
                 var query = $"SELECT * FROM Funcionarios ";
                 var fromDB = await db.QueryAsync<Funcionario>(query);
-                return fromDB.FirstOrDefault();
+                return fromDB.ToList();
             }
         }
     }
